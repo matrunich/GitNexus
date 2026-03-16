@@ -520,6 +520,24 @@ The wiki generator reads the indexed graph structure, groups files into modules 
 
 ---
 
+## Developer Setup
+
+```bash
+# Core library (CLI + MCP + HTTP server)
+cd gitnexus && npm install && npm run build
+
+# Web UI
+cd gitnexus-web && npm install && npm run dev   # → http://localhost:5173
+
+# Tests
+cd gitnexus && npm test                 # unit
+cd gitnexus && npm run test:integration # integration (requires built dist/)
+```
+
+For a full architectural deep-dive — ingestion pipeline phases, knowledge graph schema, key algorithms (Leiden, BFS, BM25+RRF), Graph RAG agent design, TypeScript vs Python rationale, and performance/security notes — see **[ARCHITECTURE.md](./ARCHITECTURE.md)**.
+
+---
+
 ## Acknowledgments
 
 - [Tree-sitter](https://tree-sitter.github.io/) — AST parsing
